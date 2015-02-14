@@ -1,0 +1,12 @@
+---
+vagrantfile-local:
+    vm:
+        box: trusty64
+        box_url: http://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box
+        hostname: 'vagrant-meteor.edlfb.net'
+        memory: '1024'
+        cpus: '1'
+        name: 'vagrant-meteor'
+        chosen_provider: virtualbox
+        network:
+            private_network: 192.168.87.87
