@@ -2,9 +2,11 @@ require 'yaml'
 
 dir = File.dirname(File.expand_path(__FILE__))
 
+# Configuration file
 configValues = YAML.load_file("#{dir}/config.yaml")
 data         = configValues['vagrantfile-local']
 
+# Vagrant Minimal Version
 Vagrant.require_version '>= 1.6.0'
 
 Vagrant.configure(2) do |config|
@@ -16,7 +18,7 @@ Vagrant.configure(2) do |config|
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box     = "#{data['vm']['box']}"
   config.vm.box_url = "#{data['vm']['box_url']}"
-  
+
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -30,7 +32,7 @@ Vagrant.configure(2) do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  config.vm.network "private_network", ip: "192.168.30.00"
+  config.vm.network "private_network", ip: "#{data['vm']['network']['private_network']}"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on

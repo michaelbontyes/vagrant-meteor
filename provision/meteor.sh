@@ -6,11 +6,13 @@ else
 	cd /vagrant/
 	meteor create app
 	cd /home/vagrant/
-	sudo mkdir -p /home/vagrant/app/.meteor/local
-	sudo mount --bind /home/vagrant/app/.meteor/local/ /vagrant/app/.meteor/local/
-	echo “sudo mount --bind /home/vagrant/app/.meteor/local/ /vagrant/app/.meteor/local/” >> ~/.bashrc && source ~/.bashrc
 	echo "Meteor installed."
 fi
+echo "Preparing the MongoDB."
+sudo mkdir -p /home/vagrant/app/.meteor/local
+sudo mount --bind /home/vagrant/app/.meteor/local/ /vagrant/app/.meteor/local/
+echo “sudo mount --bind /home/vagrant/app/.meteor/local/ /vagrant/app/.meteor/local/” >> ~/.bashrc && source ~/.bashrc
+echo "Starting Meteo."
 cd /vagrant/app/
 meteor
 echo "Meteor is running."

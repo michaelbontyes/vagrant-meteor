@@ -8,4 +8,3 @@ chown -R vagrant:vagrant /vagrant
 # apt-get -y autoremove
 # apt-get -y autoclean
 echo "Installation Complete."
-echo "url: 192.168.30.00:3000"
