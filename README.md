@@ -28,9 +28,15 @@ Run the Vagrant Meteor Machine
 $ vagrant up
 ```
 
+Reload the machine - also in case the app is not running right after the "vagrant up"
+
+```sh
+$ vagrant reload --provision
+```
+
 Open the app from you browser
 
-**192.168.30.0:3000**
+**192.168.87.87:3000**
 
 
 ### Usage
